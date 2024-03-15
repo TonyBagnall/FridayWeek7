@@ -43,9 +43,7 @@ public class App extends Application {
         stage.setOnCloseRequest(ev -> {
             shutdown();
         });
-
         openLogin();
-//        openChat();
 
     }
 
@@ -56,7 +54,6 @@ public class App extends Application {
         logger.info("Opening login window");
         var window = new LoginWindow(this);
         stage.setScene(window.getScene());
-
         stage.show();
         stage.centerOnScreen();
     }

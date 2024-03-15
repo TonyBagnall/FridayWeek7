@@ -36,9 +36,36 @@ public class LoginWindow {
      */
     public LoginWindow(App app) {
         this.app = app;
-        app.setUsername("Guest");
-        app.openChat();
+        Image image = new Image("/ECS.png");
+
+        // Create components
+        ImageView imageView = new ImageView(image);
+        imageView.setFitHeight(50);
+        imageView.setFitWidth(50);
+        TextField nameField = new TextField();
+        nameField.setPromptText("Enter your name:");
+        Button signInButton = new Button("Sign In");
+        class LoginButton implements EventHandler<ActionEvent> {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                app.setUsername(nameField.getText());
+                app.openChat();
+            }
+        }
+        signInButton.setOnAction(new LoginButton());
+        // Create a VBox layout and add components
+        VBox vBox = new VBox(10, imageView, nameField, signInButton);
+        vBox.setAlignment(Pos.CENTER);
+
+        // Set the scene and stage
+        scene = new Scene(vBox, 600, 700);
+
     }
+
+
+
+
+
 
 /*
         this.app = app;

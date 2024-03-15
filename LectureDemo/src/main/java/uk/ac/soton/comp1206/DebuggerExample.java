@@ -12,6 +12,7 @@ public class DebuggerExample {
 
     }
     public static void main(String[] args) {
+        String str = "hello";
         int x = aFunction("AFC");
         System.out.println(x);
     }

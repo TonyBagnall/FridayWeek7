@@ -47,8 +47,8 @@ public class ChatWindow {
         //Setup scene with a border pane
         var pane = new BorderPane();
         this.scene = new Scene(pane,640,480);
-//        Button b = new Button("Log out");
-//        b.setOnAction(e->app.openLogin());
+        Button b = new Button("Log out");
+        b.setOnAction(e->app.openLogin());
         //Link the communicator to this window
         communicator.setWindow(this);
 
@@ -61,7 +61,7 @@ public class ChatWindow {
         sendMessageBar.getChildren().add(sendMessage);
         HBox.setHgrow(messageToSend,Priority.ALWAYS);
         pane.setBottom(sendMessageBar);
-//        pane.setTop(b);
+        pane.setTop(b);
         //Create a textflow to hold all messages
         messages = new TextFlow();
 
